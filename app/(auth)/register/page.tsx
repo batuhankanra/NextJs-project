@@ -25,9 +25,11 @@ const Page:React.FC = () => {
           redirect:false
         }).then((callback)=>{
           if(callback?.ok){
-
-            router.push('/')
-            router.refresh()
+            setResponse({message:'Kayit Basarili',type:'Success'})
+            setTimeout(()=>{
+              router.push('/')
+              router.refresh()
+            },3000)
 
           }
           if(callback?.error){
